@@ -7,12 +7,14 @@ int count_p(string text);
 bool in_massiv(vector<string>  slows, string slow,int ras);
 int nom_el(vector<string>  slows, string slow,int ras);
 int nom_el_max(vector<int>  kol,int ras);
+string uppercase(string text);
 int main(){
   string text , ass="1111!;.";
   //getline(cin,text);
 
-  text="ff ff ff, vv! vv? vv ghh: vv hh vv. vv; vv";
+  text="ff ff ff, vv! vv? Vv ghh: Vv hh vv. vv; vv";
   //strcat_s(text, " ");
+  text=uppercase(text);
   text=text+" ";
   vector<string> slows=map(text),slowa;
   vector<int> kol;
@@ -85,4 +87,14 @@ int nom_el_max(vector<int>  kol,int ras){
     }
   }
   return nom;
+}
+string uppercase(string text){
+  string temp="";
+  int i=0,k=text.length();
+  while(i<k)
+    {
+      temp+=tolower(text[i]);
+       i++;
+    }
+    return temp;
 }
